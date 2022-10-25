@@ -1,11 +1,12 @@
-import { Button } from 'bootstrap';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import React from 'react';
-import { Form, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
     return (
         <div>
-            <Form >
+            <Form className='w-50 mx-auto mt-5'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control name="name" type="text" placeholder="Your Name" />

@@ -14,7 +14,10 @@ const Header = () => {
                         <Nav.Link > <Link className=" text-white text-decoration-none" to='/course'>Courses</Link></Nav.Link>
                         <Nav.Link >  <Link className=" text-white text-decoration-none" to='/faq'>FAQ</Link></Nav.Link>
                         <Nav.Link ><Link className=" text-white text-decoration-none" to='/blog'>Blog</Link></Nav.Link>
+                        <Link to='/login'>Login</Link>
+                        <Link to='/register'>Register</Link>
                     </Nav>
+
                 </Container>
             </Navbar>
         </div>
