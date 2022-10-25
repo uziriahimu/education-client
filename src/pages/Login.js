@@ -1,12 +1,33 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import React from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthProvider';
 
 
 const Login = () => {
+    const { signIn } = useContext(AuthContext)
+    const handleSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+
+            })
+            .catch(error => {
+                console.error(error)
+
+            })
+
+    }
     return (
         <div>
-            <Form className='w-50 mx-auto mt-5'>
+            <Form className='w-50 mx-auto mt-5' onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control name="email" type="email" placeholder="Enter email" required />
