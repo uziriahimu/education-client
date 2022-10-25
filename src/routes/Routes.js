@@ -4,6 +4,8 @@ import Blog from "../pages/Blog";
 import Courses from "../pages/Courses";
 import Error from "../pages/Error";
 import Faq from "../pages/Faq";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 export const routes = createBrowserRouter([
     {
@@ -21,6 +23,14 @@ export const routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>,
+            },
+            {
+                path: '/login',
+                element: <Login></Login>,
+            },
+            {
+                path: '/register',
+                element: <Register></Register>,
             }
         ]
     },
