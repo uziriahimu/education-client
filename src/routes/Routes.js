@@ -7,7 +7,8 @@ import About from "../Pages/Courses/RightSide/About";
 import MyCourses from "../Pages/Courses/RightSide/MyCourses";
 import Payment from "../Pages/Courses/RightSide/Payment";
 import Profile from "../Pages/Courses/RightSide/Profile";
-import Home from "../Pages/Home/Home";
+import Error from "../Pages/Error";
+import Home from "../Pages/Home/Home"
 
 export const routes = createBrowserRouter([
     {
@@ -16,7 +17,7 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/home',
-                element: <Home />,
+                element: <Home></Home>
             },
             {
                 path: '/login',
@@ -26,13 +27,19 @@ export const routes = createBrowserRouter([
                 path: '/blog',
                 element: <Blog />,
             },
+
             {
                 path: '/courses',
                 element: <Courses />,
+                loader: () => fetch('http://localhost:5000/courses'),
+
                 children: [
                     {
-                        index: true,
-                        element: <MyCourses />
+                        // index: true,
+                        path: '/courses',
+
+                        element: <MyCourses />,
+
                     },
                     {
                         path: 'profile',
@@ -49,5 +56,9 @@ export const routes = createBrowserRouter([
                 ]
             },
         ]
+    },
+    {
+        path: '*',
+        element: <Error></Error>
     }
 ])

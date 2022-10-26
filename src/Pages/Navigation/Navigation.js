@@ -13,11 +13,11 @@ const Navigation = () => {
         setDark(e.target.checked);
     }
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='p-0'>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='p-3 mb-5'>
             <Container>
                 <Navbar.Brand as={Link} to="/">
-                    <Image src='https://i.ibb.co/QHKZFzQ/image.png' />{' '}
-                    Tutorio
+                    <Image style={{ height: "30px" }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRla0sOBNaMZhbffH_Z3om-SP-FMBd6_ok9GA&usqp=CAU' />{' '}
+                    CSE Course
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
