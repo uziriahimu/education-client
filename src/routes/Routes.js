@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../layout/Main";
-import Blog from "../pages/Blog";
-import Courses from "../pages/Courses";
-import Error from "../pages/Error";
-import Faq from "../pages/Faq";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import Sidebar from "../pages/Sidebar";
+import Main from "../Layout/Main";
+import Authentication from "../Pages/Authentication/Authentication";
+import Blog from "../Pages/Blog/Blog";
+import Courses from "../Pages/Courses/Courses";
+import About from "../Pages/Courses/RightSide/About";
+import MyCourses from "../Pages/Courses/RightSide/MyCourses";
+import Payment from "../Pages/Courses/RightSide/Payment";
+import Profile from "../Pages/Courses/RightSide/Profile";
+import Home from "../Pages/Home/Home";
 
 export const routes = createBrowserRouter([
     {
@@ -14,34 +15,39 @@ export const routes = createBrowserRouter([
         element: <Main></Main>,
         children: [
             {
-                path: '/course',
-                element: <Courses></Courses>,
-            },
-            {
-                path: '/faq',
-                element: <Faq></Faq>,
-            },
-            {
-                path: '/link/:id',
-                element: <Sidebar></Sidebar>,
-                loader: ({ params }) => fetch(`http://localhost:5000/link/${params.id}`)
-            },
-            {
-                path: '/blog',
-                element: <Blog></Blog>,
+                path: '/home',
+                element: <Home />,
             },
             {
                 path: '/login',
-                element: <Login></Login>,
+                element: <Authentication />,
             },
             {
-                path: '/register',
-                element: <Register></Register>,
-            }
+                path: '/blog',
+                element: <Blog />,
+            },
+            {
+                path: '/courses',
+                element: <Courses />,
+                children: [
+                    {
+                        index: true,
+                        element: <MyCourses />
+                    },
+                    {
+                        path: 'profile',
+                        element: <Profile />
+                    },
+                    {
+                        path: 'about',
+                        element: <About />
+                    },
+                    {
+                        path: 'payment',
+                        element: <Payment />
+                    },
+                ]
+            },
         ]
-    },
-    {
-        path: '*',
-        element: <Error></Error>
     }
 ])
