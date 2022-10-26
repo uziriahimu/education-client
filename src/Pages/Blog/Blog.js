@@ -3,12 +3,12 @@ import Accordion from 'react-bootstrap/Accordion';
 
 const Blog = () => {
     return (
-        <div>
+        <div className='mb-5'>
             <Accordion defaultActiveKey={['0']} alwaysOpen>
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>Question#1: What is Cors?</Accordion.Header>
                     <Accordion.Body>
-                        Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served.
+                        Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. CORS also relies on a mechanism by which browsers make a "preflight" request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request.
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
@@ -22,7 +22,8 @@ const Blog = () => {
                 <Accordion.Item eventKey="1">
                     <Accordion.Header>Question#3: How does the private route work?</Accordion.Header>
                     <Accordion.Body>
-                        The react private route component renders child components ( children ) if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property.
+                        The private route component is similar to the public route, the only change is that redirect URL and authenticate condition. If the user is not authenticated he will be redirected to the login page and the user can only access the authenticated routes If he is authenticated (Logged in).
+
                     </Accordion.Body>
                 </Accordion.Item>
 

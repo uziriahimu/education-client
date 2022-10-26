@@ -17,14 +17,14 @@ const Navigation = () => {
             <Container>
                 <Navbar.Brand as={Link} to="/">
                     <Image style={{ height: "30px" }} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRla0sOBNaMZhbffH_Z3om-SP-FMBd6_ok9GA&usqp=CAU' />{' '}
-                    CSE Course
+                    CSE Courses
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
 
                     {/* navigation menus */}
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/courses">Courses</Nav.Link>
                         <Nav.Link as={Link} to="/faq">FAQ</Nav.Link>
                         <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
