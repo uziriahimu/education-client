@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthProvider';
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -45,7 +46,18 @@ const Login = () => {
                 <Form.Text className="text-danger">
 
                 </Form.Text>
+                <p>New to this website <Link to='/register'>Create a new account</Link></p>
+
+                <button className="btn mt-3 border d-flex align-items-center justify-content-evenly p-2 m-auto">
+                    <img
+                        className="w-25 image-fluid btn-image"
+                        src="https://img.icons8.com/color/344/google-logo.png"
+                        alt=""
+                    />
+                    <p className="fw-bold">Google SignIn</p>
+                </button>
             </Form>
+
         </div>
     );
 };

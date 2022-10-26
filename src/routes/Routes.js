@@ -6,6 +6,7 @@ import Error from "../pages/Error";
 import Faq from "../pages/Faq";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Sidebar from "../pages/Sidebar";
 
 export const routes = createBrowserRouter([
     {
@@ -19,6 +20,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/faq',
                 element: <Faq></Faq>,
+            },
+            {
+                path: '/link/:id',
+                element: <Sidebar></Sidebar>,
+                loader: ({ params }) => fetch(`http://localhost:5000/link/${params.id}`)
             },
             {
                 path: '/blog',
