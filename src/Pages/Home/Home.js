@@ -9,13 +9,11 @@ const Home = () => {
                 <div className='mb-10 lg:max-w-lg  lg:pr-5 lg:mb-0'>
                     <div className='max-w-xl mb-6 lg:mt-8'>
 
-                        <h2 className='max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none'>
-                            If you fell  <br className='hidden md:block' /> down yesterday{' '}
-                            <span className='inline-block text-blue-400'> stand up today.</span>
+                        <h2 className='text-center mb-5 '>
+                            Computer Science  <br className='hidden md:block' /> Demand for{' '}
+                            <span className='inline-block text-blue-400'>   CS professionals has never been greater.</span>
                         </h2>
-                        <p className='text-base text-gray-700 md:text-lg'>
-                            There are no secrets to success. It is the result of preparation, hard work, and learning from failure.Success isn’t overnight. It’s when every day you get a little better than the day before. It all adds up.
-                        </p>
+
                     </div>
                     <div className='flex flex-col items-center md:flex-row'>
                         <a
