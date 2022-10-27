@@ -5,14 +5,18 @@ import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
+
 const Navigation = () => {
     const { user, logOut } = useContext(AuthContext)
     const [dark, setDark] = useState(false)
+    const [open, setOpen] = useState('');
     console.log(user);
 
     const handleToggle = (e) => {
         setDark(e.target.checked);
     }
+
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='p-3 mb-5'>
             <Container>
@@ -32,7 +36,7 @@ const Navigation = () => {
 
                     </Nav>
 
-                    {/* user and authencation part */}
+                    {/* user and authentication part */}
                     <Nav>
                         {user?.displayName && <Nav.Link >{user?.displayName}</Nav.Link>}
                         {
@@ -44,7 +48,20 @@ const Navigation = () => {
                         <Nav.Link eventKey={2} href="#memes">
                             {
                                 user?.photoURL ?
-                                    <Image style={{ height: '40px' }} roundedCircle src={user?.photoURL}></Image>
+                                    <div className='text-white' onMouseOver={() => setOpen(user?.displayName)} onMouseOut={() => setOpen(user?.photoURL)}>
+                                        <Image style={{ height: '40px' }} roundedCircle
+                                            src={
+                                                open === user?.photoURL
+                                                    ?
+                                                    user?.photoURL
+                                                    :
+                                                    user?.displayName
+                                            }>
+
+                                        </Image>
+                                    </div>
+
+
                                     : <FaUser></FaUser>
                             }
                         </Nav.Link>
@@ -57,7 +74,7 @@ const Navigation = () => {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-        </Navbar>
+        </Navbar >
     );
 };
 

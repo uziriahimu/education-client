@@ -2,9 +2,13 @@ import React from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 
+
+
+
+
 const SingleCourse = () => {
+
     const course = useLoaderData();
-    console.log(course)
 
     return (
 

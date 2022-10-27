@@ -5,11 +5,9 @@ import Blog from "../Pages/Blog/Blog";
 import Checkout from "../Pages/Checkout/Checkout";
 import Courses from "../Pages/Courses/Courses";
 import LeftSide from "../Pages/Courses/LeftSide";
-import About from "../Pages/Courses/RightSide/About";
+// import About from "../Pages/Courses/RightSide/About";
 import Faq from "../Pages/Courses/RightSide/Faq";
 import MyCourses from "../Pages/Courses/RightSide/MyCourses";
-import Payment from "../Pages/Courses/RightSide/Payment";
-import Profile from "../Pages/Courses/RightSide/Profile";
 import SingleCourse from "../Pages/Courses/RightSide/SingleCourse";
 import Error from "../Pages/Error";
 import Home from "../Pages/Home/Home"
@@ -67,19 +65,7 @@ export const routes = createBrowserRouter([
 
                         element: <MyCourses />,
 
-                    },
-                    {
-                        path: 'profile',
-                        element: <Profile />
-                    },
-                    {
-                        path: 'about',
-                        element: <About />
-                    },
-                    {
-                        path: 'payment',
-                        element: <Payment />
-                    },
+                    }
                 ]
             },
         ]
