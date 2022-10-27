@@ -1,15 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from "react-hook-form"
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Registration = () => {
+    const [error, setError] = useState()
     const { register, handleSubmit } = useForm();
     const { createUser, setLoading, updateUserProfile } = useContext(AuthContext)
 
 
     const onSubmit = data => {
-        data.password.length < 6 ? alert('chottttto hye geche baba!')
+        data.password.length < 6 ? alert('password is less then 6 charachter')
             :
             createUser(data.email, data.password)
                 .then(result => {
@@ -20,7 +21,7 @@ const Registration = () => {
                 })
                 .catch(e => {
                     console.error(e);
-                    // setError(e.message);
+                    setError(e.message);
                 });
     };
 
@@ -62,7 +63,10 @@ const Registration = () => {
 
 
 
-            <Button size='sm' variant="primary" type='submit'>Submit</Button>
+            <Button size='sm' variant="primary" type='submit'>Register</Button>
+            <Form.Text className="text-danger">
+                {error}
+            </Form.Text>
         </Form>
     );
 };

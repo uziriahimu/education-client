@@ -2,9 +2,10 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CourseDetails from './CourseDetails';
 
-
-const MyCourses = () => {
+const Category = () => {
     const courses = useLoaderData()
+
+    console.log(courses);
     return (
         <div>
             {
@@ -16,5 +17,4 @@ const MyCourses = () => {
     );
 };
 
-
-export default MyCourses;
+export default Category;

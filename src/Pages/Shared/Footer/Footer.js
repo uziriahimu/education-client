@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -9,7 +10,11 @@ const Footer = () => {
                 <p>Sultanate of Oman </p>
                 <p>Privacy Ploicy | Terms of uset, </p>
             </div>
-
+            <div className='text-white fs-2 '>
+                <FaGithub className='me-5'></FaGithub>
+                <FaFacebook className='me-5'></FaFacebook>
+                <FaTwitter></FaTwitter>
+            </div>
         </div>
     );
 };

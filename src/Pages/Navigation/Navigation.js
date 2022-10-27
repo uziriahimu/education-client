@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { FaUser } from 'react-icons/fa';
 import { useState } from 'react';
 import { Button, Container, Image, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -40,6 +41,13 @@ const Navigation = () => {
                                 :
                                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
                         }
+                        <Nav.Link eventKey={2} href="#memes">
+                            {
+                                user?.photoURL ?
+                                    <Image style={{ height: '40px' }} roundedCircle src={user?.photoURL}></Image>
+                                    : <FaUser></FaUser>
+                            }
+                        </Nav.Link>
 
                         {/* toggle dark/light mode  */}
                         <div>

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap'
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import LeftSide from './LeftSide';
 import MyCourses from './RightSide/MyCourses';
 
 const Courses = () => {
-    const courses = useLoaderData()
-    // console.log(courses)
+
     return (
         <div>
             <Container>
@@ -21,12 +20,7 @@ const Courses = () => {
 
                 </Row>
             </Container>
-            {
-                courses.map(course => <MyCourses
-                    key={course.id}
-                    corse={course}
-                ></MyCourses>)
-            }
+
         </div>
     );
 };

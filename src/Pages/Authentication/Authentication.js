@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Badge, Button, Container } from 'react-bootstrap';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+
 import Login from './Login';
 import Registration from './Registration';
 
