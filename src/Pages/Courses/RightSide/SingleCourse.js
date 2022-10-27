@@ -12,7 +12,7 @@ const SingleCourse = () => {
 
     return (
 
-        <Container className='pt-5 w-50 mx-auto' data-aos="fade-zoom-in">
+        <Container className='pt-5  w-100 ' data-aos="fade-zoom-in">
 
 
             <Card ref={ref} >
